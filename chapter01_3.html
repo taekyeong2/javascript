@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제어문</title>
+</head>
+<body>
+    <script>
+        //if문 - 제어문
+        //if(표현식){ <-참이면 해당영역 실행}
+        //alert - 팝업창 띄어주는것 (출력해주는것
+        // if(273 < 100){
+        //     alert('true'); // if 문 안에가 조건이 거짓이기 때문에 if문 안에 내용이 실행 못함
+        // }
+        // alert('프로그램 종료');
+
+        // if(!273 < 100){
+        //     alert('true'); 
+        // }
+        // alert('프로그램 종료');
+
+        // if(273 > 100){
+        //     alert('second true'); 
+        // }
+        // alert('프로그램 종료');
+
+        // if('yedam' === 'yedam'){
+        //     //실행문
+        // }
+
+        // //시간을 가져오기 위해서 사용
+        // const date = new Date();
+        // const hour = date.getDate();
+        //현재시간을 가져옴 alert(hour + " 시 입니다.")    
+        // //12 보다 적은 수 (오전)
+        // if(hour < 12){
+        //     alert('오전입니다');
+        // }
+        // //12보다 큰 수 (오후)
+        // if(hour > 12){
+        //     alert('오후입니다');
+        // }
+
+        //성적을 출력하는 예제
+        //점수를 입력 -> A,B,C,D
+        // //A90이상 B80이상 C70이상 D60이상 
+        // let point = prompt("점수를 입력하세요");
+
+        // if(point >= 90){
+        //     alert("A학점 입니다");
+        // }
+        // if(point < 90 && point >=80){ // 곱하기 참 *거짓 0 실행 놉 
+        //     alert("B학점 입니다");
+        // }
+        // if(point < 80 && point >=70){
+        //     alert("C학점 입니다");
+        // }
+        // if(point < 70 && point >=60){
+        //     alert("D학점 입니다");
+        // }
+
+        //홀수 짝수 판단하기
+        //10 / 2 == 0 , 6 /2 == 0 , 4 / 2 == 0
+        // let num = prompt("숫자를 입력하세요")
+        // if(num % 2 ==0){
+        //     alert("짝수 입니다");
+        // }
+        
+        // if(num % 2 ==1){
+        //     alert("홀수 입니다");
+        // }
+   
+        //if ~ else
+        // if(표현식){
+        //     참일경우 실행문
+        // }else{
+        //     참이아닐경우 실행하는 구문
+        // }
+        // if(273 < 100){
+        //     alert('true');
+        // }else{
+        //     alert('false');
+        // }
+
+        // const date = new Date();
+        // const hour = date.getHours();
+        // if(hour < 12){
+        //     alert('오전입니다');
+        // }else{
+        //     alert('오후입니다');
+        // }
+
+        //if ~ else if ~ ... ~ else
+        // if(표현식){
+        //     참일경우 실행문
+        // }else if(표현식){
+        //     참일경우 실행문
+        // }else if(표현식){
+        //     참일경우 실행문
+        // }...{
+        // }else{
+        //    모든 if문이 참이 아닐경우 실행하는 구문
+        // }
+        // let point = prompt("점수를 입력하세요");
+        // if(point >= 90){
+        //     alert("A학점 입니다");
+        // }else if(point < 90 && point >= 80){
+        //     alert("B학점 입니다");
+        // }else if(point < 80 && point >= 70){
+        //     alert("C학점 입니다");
+        // }else if(point < 70 && point >= 60){
+        //     alert("D학점 입니다");
+        // }else{
+        //     alert("낙제 입니다");
+        // }
+        //===============================================
+        // if(point >= 90){
+        //     alert("A학점 입니다");
+        // }else if(point >= 80){
+        //     alert("B학점 입니다");
+        // }else if(point >= 70){
+        //     alert("C학점 입니다");
+        // }else if(point >= 60){
+        //     alert("D학점 입니다");
+        // }else{
+        //     alert("낙제 입니다");
+        // }
+        //===============================================
+        // if(point < 60){
+        //     alert("낙제입니다");
+        // }else if(point < 70){
+        //     alert("D학점 입니다");
+        // }else if(point < 80){
+        //     alert("C학점 입니다");
+        // }else if(point < 90){
+        //     alert("B학점 입니다");
+        // }else{
+        //     alert("A학점 입니다");
+        // }
+        
+        //상황연산자
+        // 표현식(비교하는 구문) ? 표현식이 참일 경우 : 표현식이 거짓일 경우
+        // let oper = 300 > 100 ? true : false;
+        // let oper = 300 > 100 ? "1" : "2";
+        // console.log(oper);
+
+        // if(300>100){
+        //     oper = true;
+        // }else{
+        //     oper = false;
+        // }
+            
+        //중첩 if문
+        // if(표현식){
+        //     참일경우 실행하는 공간
+        //     if(표현식){
+
+        //     }
+        // }
+        //2의 배수이고 5의 배수이면 참이라고 출력하시오
+        let number4 = prompt("수를 입력하세요");
+        if(number4 % 2 == 0){
+
+            document.write("<h1>2의 배수 조건 만족</h1>");
+
+            if(number4 % 5 == 0){
+                alert("2의 배수이고 5의 배수인 숫자 :" + number4);
+            }else{
+                alert("2의 배수이지만 5의 배수는 아님 :" + number4);
+            }
+        }else{
+            alert("2의 배수가 아님 :" + number4);
+        }
+    </script>
+</body>
+</html>
