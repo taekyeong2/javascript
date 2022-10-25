@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자열활용</title>
+</head>
+<body>
+    <script>
+        //문자열을 활용한 반복문 사용
+
+        let str = "hello world";
+        //         012345678910
+        // 문자열 자르기
+        // str.substring(시작하는 위치, 끝나는 위치) - 0부터 시작
+        console.log(str.substring(2,7)); // 띄어쓰기도 포함
+        
+        // 첫번째 시작 문자 위치 찾기 - 0부터 시작
+        console.log(str.indexOf('d'));
+        console.log(str.indexOf('l'));
+        console.log(str.indexOf('wo'));
+        //l로 시작하는 위치를 표현 단, 4번째 부터 찾으세요
+        console.log(str.indexOf('l',4));
+        //문자열 끝에서 부터 찾으세요
+        console.log(str.lastIndexOf('l'));
+
+        //구분자를 기준으로 문자를 자르세요
+        str2 = "hello,bye,yedam"; 
+        console.log(str2.split(','));
+
+        //문자열 길이
+        console.log(str.length);// indexOf, substring과 달리 1부터 시작함
+        
+        //소문 대문자로
+        console.log(str.toUpperCase());
+
+        // 대문 소문자로
+        let str1 = "HELLO WORLD";
+        console.log(str1.toLowerCase());
+
+        //맨끝자리 문자 확인
+        console.log(str.endsWith('d'));
+
+        //-----------------------------------------
+
+        //str의 길이만큼 반복문 실행
+        for(let i =0; i<str.length; i++){
+            //i = 0, 시작 위치는 0, 끝나는 위치는 1
+            //  (시작하는위치 0)h(끝나는위치 1)ello world 
+            if(str.substring(i, i+1) == "l"){ // 자리수 표현 위해 +1(1위치앞에서 짜름)
+                console.log("l 위치는" + (i+1) + "입니다.");
+            }
+        }
+
+        //========================================
+
+        // ==================================================================================
+        //문자열을 활용한 반복문
+        //입력받은 수까지 출력을 합니다.
+        //단, 마지막 자리가 3,6,9로 끝이나면 *로 표시 합니다.
+        //예를들면 1~20 -> 1 2 * 4 5 * 7 ... 20
+
+    
+        let num = Number(prompt("숫자를 입력하세요"));
+
+        for(let i =1; i<=num; i++){
+
+            let temp = String(i);
+
+            if(temp.endsWith('3') || temp.endsWith('6') || temp.endsWith('9')){
+                temp=temp.substring(0, temp.length-1); // 마지막 끝자리를 잘라서 버린다.
+                temp += "*";
+            }
+            console.log(temp);
+        }
+        
+        //=================================================================================================
+
+        //배열
+        // let num = 1;
+        // let str = "string";
+        // let arr =  [1, "string", 2, 3]
+        // array[0] ->1 / array[3] ->3
+        // 또는 let array = []
+    </script>
+</body>
+</html>

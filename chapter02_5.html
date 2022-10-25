@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또</title>
+</head>
+<body>
+    <script>
+        //로또
+
+        // 1) Math.random 
+        // 2) Math.floor -> 12.33 ->(내림)12.00 
+
+        console.log(Math.random()); // 실수로 나옴 정수로 바꿔줘야함
+        console.log(Math.floor(Math.random()));
+        //0<=실수<1  0.xxxx -> 0
+        //데이터 가공해서 1<=실수<46
+        console.log(Math.floor(Math.random()*45)+1);
+        //0*44<=실수<1*45
+        //0+1<=실수<45+1
+        //1<=실수<46
+
+        //Lotto
+        //한줄에 여섯개 번호 발급, 
+        //변수 6개 x -> 한개의 배열에 저장해서 쓸 수있다.
+        //[1,2,3,4,5,6] => 한줄만 만들기
+        //단 중복되지 않은 수만 허용해서 배열에 적용한다.
+        //for문, 배열 활용해서 만들 수 있다. 
+
+    
+
+        
+    </script>
+</body>
+</html>
