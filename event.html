@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section id="section-sample">
+        <div id="div-sample">
+            <input type="button" value="클릭!">
+        </div>
+    </section>
+    <script>
+        let secElem = document.querySelector('#section-sample');
+        let divElem = document.querySelector('#div-sample');
+        let btn = document.querySelector('#div-sample>input[type="button"]');
+
+        //Section 이벤트 생성
+        secElem.addEventListener('click', e => {
+            alert('section 클릭!');
+        });
+
+        //Div 클릭 이벤트 생성
+        divElem.addEventListener('click', e => {
+            alert('div 클릭!');
+        });
+
+        //Input 버튼 클릭 이벤트 생성
+        btn.addEventListener('click', e => {
+            e.stopPropagation();
+            alert('button 클릭!');
+        });
+    </script>
+</body>
+</html>

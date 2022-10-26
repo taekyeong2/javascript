@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.red {
+    background-color: coral;
+}
+</style>
+
+<body>
+    <h1>타이틀</h1>
+    <ul id="my-list">
+        <li class="list">리스트 1</li>
+        <li class="list">리스트 2</li>
+        <li class="list">리스트 3</li>
+    </ul>
+    <div id="app">
+        <span id="child"></span>
+    </div>
+    <script>
+        let myBox = document.querySelector('ul');
+        //요소 안에 html 내용을 넣는 방법.
+        //myBox.innerHTML = "<h1>안녕하세요</h1>";
+        let list = document.getElementById('my-list');
+        let lists = document.querySelector('#my-list .list:nth-child(1)');
+        console.log(lists);
+        //document.querySelectorAll('ul > li')
+        let taglist = document.getElementsByTagName('li');
+        console.log(taglist[0]);
+
+        //DOM 생성
+        let makeP = document.createElement('p');
+
+        console.log(makeP);
+        //style, class, id, 내용(text)
+        let div = document.getElementById('app');
+
+        makeP.textContent = 'P element입니다.';
+
+        div.appendChild(makeP);
+        console.log(div);
+        
+        div.removeChild(document.getElementById('child'));
+        console.log(div);
+
+        let pTag = document.querySelector('#app p');
+        console.log(pTag);
+
+        let pText = pTag.textContent;
+        console.log(pText);
+
+        let imgTag = document.createElement('img');
+
+        //<img scr="image.jpg" alt="사진을 불러올수없습니다." style="width:30px">
+        imgTag.setAttribute('src', 'image.jpg');
+        imgTag.setAttribute('alt', '사진을 불러올수 없습니다.');
+        imgTag.setAttribute('style', 'width:30px')
+
+        console.log(imgTag);
+
+        let aTag = document.createElement('a');
+
+        aTag.setAttribute('href', 'https://naver.com');
+        //aTag.textContent = "네이버";
+        aTag.setAttribute('style', 'color:red')
+
+        aTag.appendChild(imgTag);
+
+        div.appendChild(aTag);
+
+        let confirms = aTag.getAttribute('href');
+        console.log(confirms);
+
+        let spanTag = document.createElement('span');
+
+        // <span style="color:blue">
+        spanTag.setAttribute('style', 'color:blue');
+        spanTag.textContent = "spanTag이에요";
+        div.appendChild(spanTag);
+
+
+
+    </script>
+</body>
+</html>

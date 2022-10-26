@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="txtWord">
+    <button type="button" id="btnAdd" onclick="pAdd()">추가</button>
+
+    <p class="word">list</p>
+    <p class="word">nice</p>
+    <p class="word">good</p>
+    <p class="word">very</p>
+
+    <script>
+        // let btn = document.querySelector('#btnAdd');
+        //버튼 클릭시, p tag가 생성, 추가되도록
+        //input 태그에 있는 데이터를 추가하여서 생성
+        function pAdd(){
+
+            let p = document.createElement('p');
+            p.classList.add('word');
+            let txt = document.getElementById('txtWord');
+            p.innerHTML = txt.value;
+            document.body.append(p);
+        }
+
+        //그룹이벤트
+        document.body.addEventListener('click', function(){
+            console.log(event);
+            // if(event.target.className == 'word'){
+            //     console.log(event.target.innerHTML);
+            // }
+
+            //this -> event를 걸어 놓은 대상
+            //this -> body
+            //console.log("this", this);
+            //click한 태그
+            //console.log("target", event.target);
+            //event를 걸어 놓은 대상, this 같은 의미
+            //console.log("currentTarget", event.currentTarget);
+        })
+    </script>
+</body>
+</html>

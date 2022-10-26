@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- form tag에서만 사용 가능한 event -->
+    <!-- submit 발생시, action에 있는 페이지로 이동 -->
+    <!-- <form id="form" action="practice.html" onsubmit="alert('submit')">
+        <label>이름 <input type="text" name="userid" id="userid"></label><br>
+        <button>submit</button>
+    </form> -->
+
+    <form id="form" action="practice.html"  onsubmit="return fnSubmit()">
+        <label>이름 <input type="text" name="userid" id="userid"></label><br>
+        <button>submit</button>
+    </form>
+
+    <script>
+        let form = document.getElementById('form');
+        form.onsubmit = function(){
+            let txt = document.getElementById('userid');
+            if(txt.value == ''){
+                return false;
+            }
+                return true;
+        }
+
+
+        function fnSubmit(){
+            alert('submit');
+            let txt = document.getElementById('userid');
+            //input tag 에 데이터가 있는지 존재 유무 확인
+            if(txt.value == ''){
+                console.log('no data');
+                //데이터가 존재하지 않기 때문에 submit을 작동시키지 않겠다.
+                return false;
+            }
+                //데이터가 존재하므로 submit을 작동하겠다.
+                return true;
+        }
+    </script>
+
+
+    <!-- <button type="button" id="btn" onclick="fnButton()">button</button> -->
+
+    <button type="button" id="btn">button</button>
+    
+    <a href="http://www.naver.com" id="abtn">naver</a>
+
+    <!-- <button type="button" id="btn" onclick="let form = document.getElementById('form');
+    form.submit();">button</button>
+
+    <a href="http://www.naver.com" id="abtn" onclick="if(!confirm('이동?')){ event.preventDefault();
+    }">naver</a> -->
+
+    <script>
+
+        let btn = document.getElementById('btn');
+        let aTag = document.getElementById('abtn');
+
+        btn.onclick = function(){
+            form.submit();
+        }
+
+        aTag.onclick = function(){
+            if(!confirm('이동?')){
+                event.preventDefault();
+            }
+        }
+
+        function fnA(){
+            if(!confirm('이동?')){
+                //이벤트 중단
+                event.preventDefault();
+            }
+        }
+        //form 태그 submit 이벤트 걸어주기
+        function fnButton(){
+            let form = document.getElementById('form');
+            form.submit();
+        }
+
+
+        function btnFnc(){
+            console.log("버튼 클릭")
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+집에서 작업을 하고 push
+-> 빨간색으로 넌 못올려
+-> 1) Local <-> Remote(github) 제대로 동기화
+
+GIT push 할 때 순서
+
+- 조건 : 수정된 파일(작업한 파일)이 있어야 됩니다.
+1) git add * //수정된 파일을 staged 상태 변경(git 옮김)
+2) git commit -m '메세지'
+☆★3) git pull origin main //Local<->Remote 동기화
+  3-1) Error, 빨간색 글씨가 나오면 안됨.
+  3-2) Remote 내용 잘못 되어 있거나
+  3-3) Local 내용이 잘못 되어 있거나
+  3-4) merge(병합하다) -> 애메한 부분 -> 같은 위치 다른 소스
+4) git push origin main
+
+

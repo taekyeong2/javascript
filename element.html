@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .red{
+        color : red;
+    }
+
+    .blue{
+        color : blue;
+    }
+</style>
+<body>
+    <div>
+        <h1>cityes</h1>
+        <ul>
+            <li id="one" class="red">Seoul</li>
+            <li id="two" class="red">London</li>
+            <li id="three" class="red">Newyork</li>
+            <li id="four">Tokyo</li>
+        </ul>
+    </div>
+    <script>
+        //id를 활용한 DOM 불러오기
+        // let liTag = document.getElementById('two');
+        //console.log(liTag);
+        //css 선택자를 활용한 DOM 불러오기
+        // liTag = document.querySelector("li.red");
+        //console.log(liTag);
+        //class를 활용한 DOM 불러오기
+        // let el = document.getElementsByClassName('red');
+        //console.log(el);
+        // for(let i =0; i<el.length; i++){
+        //     console.log(el[i]);
+        //     el[i].className = 'blue';
+        // }
+        //회피 하는 방법
+        // for(let i= el.length-1; i>=0;i--){
+        //     el[i].className = "blue"
+        // }
+        // el = document.querySelectorAll("li.red");
+        // console.log(el);
+        //각각의 요소를 가져와서 사용하는 방법
+        //예를 el에 있는 첫번째 dom -> i 넣어서 사용
+        // for(let i of el){
+        //     i.className = "blue";
+        // }
+        //각각의 요소 인덱스를 가져오는것
+        //i -> 0,1,2
+        // for(let i in el){
+        //     el[i].className = "red";
+        // }
+
+        // let el = document.querySelector('#two');
+
+        // console.log(el.parentNode);
+
+        // el.parentNode.className = "blue";
+
+        // let el = document.querySelector('ul');
+        // console.log(el);
+        // console.log(el.firstElementChild);
+        // el.firstElementChild.className="blue";
+        // el.lastElementChild.className="blue";
+
+        // if(el.hasChildNodes()){ //true
+        //     console.log(el.childNodes);
+        //     console.log(el.children);
+        // }
+
+        //class 추가, 삭제
+        //className과 비슷
+        // div.classList.add('red');
+        // div.classList.remove('red');                
+        
+
+        //let el = document.querySelector('ul');
+
+        // console.log(el.firstElementChild.nextElementSibling);
+
+        // el.firstElementChild.nextElementSibling.className="blue";
+        // el.firstElementChild.nextElementSibling.nextElementSibling.className="blue";
+
+        // console.log(el.firstElementChild.nextElementSibling.previousElementSibling)
+        // el.firstElementChild.nextElementSibling.previousElementSibling.className="blue";
+
+        // console.log(el.children);
+        // console.log(el.children[2]);
+        
+        //지금은 잊어도 되요.
+        // let one = document.getElementById('one');
+
+        // console.log(one)
+
+        // let textNode = one.firstChild;
+        // console.log(textNode);
+
+
+
+        
+
+
+
+    </script>
+</body>
+</html>
