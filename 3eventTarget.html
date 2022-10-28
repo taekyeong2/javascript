@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="word">list</p>
+    <p class="word">nice</p>
+    <p class="word">good</p>
+    <p class="word">very</p>
+
+    <script>
+        //p 태그 모두를 호출
+        let plist = document.getElementsByClassName('word');
+        //for of 각각에 요소를 추출
+        //추출한 요소들마다 click event 적용
+        for(temp of plist){
+            temp.addEventListener('click', pInfo);
+        }
+
+        function pInfo(){
+            //이벤트가 발생한 대상에 대한 정보
+            console.log(event.target);
+            //대상에 대한 innerHTML 기능 실행
+            console.log(event.target.innerHTML);
+        }
+
+    </script>
+</body>
+</html>

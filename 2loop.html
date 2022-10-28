@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //for문
+        //1) 기본 for문
+        // for(초기변수;조건;증감문){
+        //     내용
+        // }
+
+        //1. 1부터 10까지 더하는 연산
+
+        let sum = 0;
+
+        //반복문 선언
+        //초기 변수는 i로 선언하고 1로 설정한다.
+        //반복문이 한바퀴 돌때마다 i는 1씩 증가시킨다.
+        //반복문은 i <= 10 조건이 만족할때까지 실행한다.
+        // for(let i = 1; i<=10; i++){
+        //     sum = sum + i;
+        //     console.log("합계" + sum);
+        //     console.log("반복되는 변수 " + i);
+        // }
+
+        //1~100까지의 숫자의 합을 구하는 반복문
+        //1) i = 1
+        //2) i <= 100
+        //3) i++;
+        // for(let i=1; i<=100; i++){
+        //     sum = sum + i; // sum += i;
+        //     console.log(i);
+        // }
+        // console.log(sum);
+
+        //1~10까지 수 중에서 짝수만 출력
+        // 1) i = 1
+        // 2) i <= 10
+        // 3) i++
+        // 4) 숫자 % 2 == 0
+        // for(let i = 1; i<=10; i++){
+        //     //짝수를 구하는 조건문
+        //     if(i % 2 == 0){
+        //         //짝수 조건이 만족하는 i를 console 출력
+        //         console.log("짝수는 : " + i + "입니다.");
+        //     }
+        // }
+
+        //1~100까지 수 중에서 홀수만 출력
+        // 1) i = 100
+        // 2) i >= 1
+        // 3) i--
+        // 4) 홀수를 구하는 if문
+
+        // for(let i = 100; i>=1; i--){
+        //     if(i%2 == 1){
+        //         console.log(i);
+        //     }
+        // }
+        
+        //덧셈을 활용 또는 짝,홀수 구하는 반복문
+
+        // 팩토리얼을 구하는 반복문을 작성하세요.
+
+        // 3! = 1*2*3
+
+        // i = 1
+        // i = 2
+        // i = 3
+
+        // i = 1;
+        // i <= 3
+        // i++
+
+        // let fac = 1;
+
+        // let count = Number(prompt("원하는 값을 입력하세요."));
+
+        // for(let i = 1; i<=count; i++){
+        //     //1) 1 = 1 * 1;
+        //     //2) 1 = 1 * 2;
+        //     //3) 2 = 2 * 3;
+        //     fac = fac*i;
+        // }
+
+        // console.log(count+"!의 값은 : " + fac);
+
+        //구구단
+        //2단 출력하는 반복문
+        // 2 * 1 = 2
+        // 2 * 2 = 4
+        // 2 * 3 = 6
+        // 2 * 4 = 8
+        // 2 * 5 = 10
+
+        for(let i = 1; i<=9; i++){
+            console.log("2*"+i+"="+(2*i));
+        }
+
+        // 1) 1~100까지의 숫자 중에서 홀수들의 합 구하기
+        // sum = 0;
+        // for(let i = 1; i<=100; i++){
+        //     if(i%2==1){
+        //         sum = sum+i;
+        //     }
+        // }
+        // console.log(sum);
+
+        // // 2) 입력 받은 수까지 합 구하기
+        // let num = Number(prompt("숫자를 입력하세요"));
+        // sum = 0;
+        // for(let i=1; i<=num;i++){
+        //     sum += i;
+        // }
+
+        // console.log(sum);
+
+        //이중 for문, 중첩 for문
+        // for(){
+        //     for(){
+
+        //     }
+        // }
+
+        //중첩 for문을 활용한 2~9단 출력하기
+
+        //2~9단까지 표현하기 위한 반복문
+        //2,3,4,5,6,7,8,9
+        // for(let i = 2; i<=9;i++){
+
+        //     //2~9단까지 계산을 하기 위한 반복문
+        //     //1,2,3,4,5,6,7,8,9
+        //     for(let j=1; j<=9;j++){
+
+        //         console.log(i+"*"+j+"="+(i*j));
+
+        //     }
+
+        // }
+
+        //두개의 주사위의 합이 6이 되는 모든 경우 출력
+        // 1) 1 + 5
+        // 2) 2 + 4
+        // 3) 3 + 3
+        // 4) 4 + 2
+        // 5) 5 + 1
+
+        // for(let i = 1; i<=6; i++){  //A 주사위 3
+
+        //     for(let j =1 ; j<=6; j++){ //B 주사위 3
+
+        //         if(i+j==6){
+        //             console.log("두개의 주사위 합이 되는 경우 " + i +"," + j);
+        //         }
+
+        //     }
+        // }
+
+        //별찍기
+
+        // *
+        // **
+        // ***
+        // ****
+        // *****
+
+        let star ='';
+
+        // for(let i=1; i<=5; i++){
+        //     for(let j=1; j<=i; j++){
+        //         star+="*";
+        //     }
+        //     star+="\n";
+        // }
+
+        //*****
+        //****
+        //***
+        //**
+        //*
+
+        // for(let i=1; i<=5; i++){
+        //     for(let j=5; j>=i; j--){
+        //         star+="*";
+        //     }
+        //     star+="\n";
+        // }
+
+     
+
+        //*****
+        // ****
+        //  ***
+        //   **
+        //    *
+        
+        // for(let i=1; i<=5; i++){
+
+        //     for(let j=1; j<i; j++){
+        //         star+=" ";
+        //     }
+
+        //     for(let j=1; j<=6-i; j++){
+        //         star+="*"
+        //     }
+
+        //     star+="\n"
+
+        // }
+        
+        // console.log(star);
+
+        let str = "Hello World";
+
+        str.substring()
+        str.indexOf()
+        str.slice()
+        str.length
+        str.toUpperCase()
+        str.toUpperCase()
+        str.endsWith()
+
+        //while문
+        //do~while문
+
+
+        //2) 참조 데이터타입 (배열)
+        //3) 참조 데이터타입 (배열)
+
+        //배열
+        
+    </script>
+</body>
+</html>

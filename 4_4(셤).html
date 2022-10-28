@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todolist</title>
+</head>
+<style>
+    *{
+        font-family:'Times New Roman', Times, serif ;
+
+    }
+    #list{
+        border: 1px dotted rgb(176, 209, 223);
+        text-align: left;
+        font-size: 20px;
+        background-color: rgb(176, 209, 223);
+        color: rgb(97, 97, 97);
+    }
+    #history{
+        border: 1px dotted rgb(238, 226, 211);
+        text-align: left;
+        font-size: 20px;
+        background-color: rgb(238, 226, 211);
+        color: rgb(97, 97, 97);
+    }
+    button{
+        background-color: rgb(88, 88, 88);
+        border: 1px solid rgb(88, 88, 88);
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-left: 5px;
+    }
+    p{
+        font-size: 15px;
+        margin-left: 15px;
+    }
+</style>
+<body>
+    <h1>To Do List</h1>
+    <input type="text" id="doList" style="width: 50vw;" autofocus>
+    <button type="button" onclick="saveList()">ListUp</button>
+    <!-- 체크된 항목을 삭제하는 버튼 -->
+    <button type="button" onclick="deleteElements()">DeleteAll</button>
+    <h2>List</h2>
+    <div id="list">
+
+    </div>
+    <h2>History</h2>
+    <div id="history">
+
+    </div>
+    <script>
+        function saveList(){
+            let input = document.getElementById('doList')
+            let p = document.createElement('p');
+            p.setAttribute('style','border:1px')
+            p.textContent = " "+ input.value + " ♥ ";
+
+            //input -> text, passwd, email, checkbox, radㄴio
+            let ckb = document.createElement('input');
+            ckb.setAttribute('type','checkbox');
+            p.prepend(ckb); //append -> 맨 끝에 붙이기 / prepend -> 맨 앞에 붙이기
+                            //appendChild -> 자식 뒤에 붙이기
+                            // testContent -> 기존의 요소에 덮어쓰기 (기존의것 사라짐)
+
+            let btn = document.createElement('button');
+            btn.setAttribute('onclick', 'moveInfo()');
+            btn.setAttribute('type', 'button');
+            btn.textContent = "complete";
+            p.appendChild(btn);
+
+            let div = document.getElementById('list');
+            div.appendChild(p)
+            
+        }
+
+        function deleteElements(){
+            let ckb = document.querySelectorAll('input[type=checkbox]:checked');
+                                     //인풋태그중에서 타입이 체크박스인 애들 중에서 체크된 애들 
+                                     //체크박스만 가져오는 것이다. (p태그 전체가 아님)
+                                    //  console.log(ckb);
+            for(let i of ckb){ //체크된 체크박스 애들반큼 반복
+                i.parentNode.remove();
+                // i -> 하나하나의 체크박스 / 그 체크박스의 부모 삭제
+            }
+        }
+
+        function checkedtoggle(){
+            let ckb = document.querySelectorAll('input[type=checkbox]:checked');
+            for(let i of ckb){  
+                i.checked = false;
+            }
+        }
+
+        //똑같은 기능 여러번 할거면ㅁ 함수 이용하는게 좋음.
+
+        function moveInfo(){
+            let history = document.getElementById('history');
+            checkedtoggle(); // 우선 실행 한 후
+            //여기로 넘어오면서 온클릭의 함수를 바꿔줌
+            event.target.setAttribute('onclick','before()')
+            event.target.textContent = 'History'
+            history.appendChild(event.target.parentNode);
+        
+            // event.target.parentNode.remove(); //이렇게 하면 히스토리에 옮기면서 지워짐
+        }
+
+        function before(){
+            let list = document.getElementById('list');
+            checkedtoggle();
+            //여기로 넘어오면 또 함수 바꿔줌
+            event.target.setAttribute('onclick','moveInfo()');
+            event.target.textContent = 'complete'
+            list.appendChild(event.target.parentNode);
+        }
+    </script>
+</body>
+</html>

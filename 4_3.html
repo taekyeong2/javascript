@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 데이터저장
+    저장할때 삭제버튼 추가해서 지우는것.  -->
+    <input type="text">
+    <button type="button" onclick="saveBtn()">저장</button>
+    <div id="saveBox">
+
+    </div>
+
+    <script>
+        function saveBtn(){
+            let inputVal = document.querySelector('input');
+            let str = inputVal.value;
+
+            let p = document.createElement('p');
+            p.textContent = str;
+
+            let btn = document.createElement('button');
+            //속성 부여 - onclick, type, value => 태그에서 사용하는 옵션(속성, attribute)
+            btn.setAttribute('onclick', 'removeBtn()');
+            btn.setAttribute('type', 'button');
+            btn.textContent='삭제'
+            
+            //<p>text<button></p>
+            p.appendChild(btn);
+            // let div = document.getElementsByClassName('saveBox');
+            // div[0].appendChild(p); // 클래스네임으로 가져오면 배열형태로 가져오게 됨
+            let div = document.getElementById('saveBox');
+            div.appendChild(p); 
+        }
+        
+        function removeBtn(){
+            console.log(event.target.parentNode.remove());
+        }
+    </script>
+</body>
+</html>

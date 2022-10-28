@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .red{
+        background-color: brown;
+        color: white;
+        font-size: 10px;
+    }
+</style>
+<body>
+    <!-- 나머지 태그는 body 작성
+    style도 작성 -->
+    <div id="app">
+        <!-- 자바 스크립트로 만드는 부분
+        <span class="red" id="sp1">span입니다.</span>
+        <h2>h2 텍스트입니다.</h2>
+        <img scr="원하는 이미지" alt="이미지를 불러 올수 없습니다." style="height:100px">
+        <ul id="ulApp">
+            <li class="liclass">텍스트1</li>
+            <li class="liclass">텍스트2</li>
+            <li class="liclass">텍스트3</li>
+        </ul>
+-->
+    </div>
+    <script>
+
+        //나머지 요소 제작
+
+        // <span></span>
+        let span = document.createElement('span');
+        //<span class="red"></span>
+        span.setAttribute('class', 'red');
+        //<span class="red" id="sp1"></span>
+        span.setAttribute('id', 'sp1');
+        //<span class="red" id="sp1">span입니다.</span>
+        span.textContent = 'span입니다.';
+
+        // <h2></h2>
+        let h2 = document.createElement('h2');
+        // <h2>h2 텍스트입니다.</h2>
+        h2.textContent = "h2 텍스입니다.";
+
+
+        // <img>
+        let img = document.createElement('img');
+        // <img scr="원하는 이미지">
+        img.setAttribute('scr', '원하는 이미지');
+        //<img scr="원하는 이미지" alt="이미지를 불러 올수 없습니다.">
+        img.setAttribute('alt', '이미지를 불러 올수 없습니다.')
+        // <img scr="원하는 이미지" alt="이미지를 불러 올수 없습니다." style="height:100px">
+        img.setAttribute('style', 'height:100px');
+
+        
+        //ul, li 요소 제작
+
+            //ul element 생성
+            let ul = document.createElement('ul');
+
+            //반복문을 활용해서 li 요소 만들기
+            //i = 1~3
+            for(let i = 1; i<=3; i++){
+                //li 요소 만들기
+                let li = document.createElement('li');
+                li.classList.add('liclass');
+                li.textContent = "텍스트"+i; // i= 1~3
+                ul.appendChild(li);
+            }
+            //div 태그를 ID를 가지고 가져오는 방법
+            //span, h2, img, ul~li
+            
+            let div = document.getElementById('app');
+            //하나의 자식만 추가 할때 사용하는 함수
+            // div.appendChild(span);
+            // div.appendChild(h2);
+            // div.appendChild(img);
+            // div.appendChild(ul);
+            //여러 자식들을 추가 할때 사용하는 함수
+            div.append(h2,span,img,ul);
+
+            let removeSpan = document.getElementById('sp1');
+            removeSpan.remove();
+    </script>
+</body>
+</html>

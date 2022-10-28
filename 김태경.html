@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김태경</title>
+</head>
+<style>
+    body{
+        width: 800px;
+        margin: 20px auto;
+        border: 1px dotted green;
+    }
+    #bodyInput{
+        text-align: left;
+    }
+    label{
+        background-color: yellow;
+        width: 200px;
+        display: inline-block;
+        text-align: center;
+        margin: 0 0 5px 10px;     
+    }
+    input{
+        margin-left: 5px;
+    }
+    #move{
+        float: right;
+        width: 200px;
+        height: 400px;
+        padding-top: 40px;
+    }
+    button{
+        width: 70px;
+        margin-bottom: 5px
+          
+    }
+    #align{
+        text-align: left;
+        width: 780px;
+        background-color: rgb(30, 30, 59);
+        color: white;
+        padding: 10px;
+        
+    }
+    #small{
+        width: 30px;
+    }
+    #List{
+        border: 1px solid blue;
+    }
+</style>
+<body>
+
+    <div id="move">
+        <button type="button" id="saveBtn" onclick="checkIn()">저장</button><br>
+        <button type="button" id="deletBtn" onclick="deletList()">선택삭제</button>
+    </div>
+    <div id="bodyInput">
+    <label>도서코드</label><input type="text" id="code" size="40">
+    <br>
+    <label>도서명</label><input type="text" id="bookName" size="40">
+    <br>
+    <label>저자</label><input type="text" id="author" size="40">
+    <br>
+    <label>출판사</label><input type="text" id="publi" size="40">
+    <br>
+    <label>금액</label><input type="text" id="money" size="40">
+    </div>
+
+
+    <p id="align"><input type="checkbox" id="small"> &emsp; 도서코드&nbsp; 도서명 &emsp; 저자 &ensp; 출판사&nbsp; 가격 &nbsp;삭제</p>
+    <div id="List">
+
+    </div>
+    <script>
+        function checkIn(){
+            let code = document.getElementById('code');
+            let bookName = document.getElementById('bookName');
+            let author = document.getElementById('author');
+            let publi = document.getElementById('publi');
+            let money = document.getElementById('money');
+
+            if(code.value == '' || bookName.value == '' || author.value == '' || publi.value =='' || money.value ==''){
+                alert("모든 창을 입력하세요.");
+            }else{
+                saveList();
+            }
+        }
+
+        function saveList(){
+            let code = document.getElementById('code');
+            let bookName = document.getElementById('bookName');
+            let author = document.getElementById('author');
+            let publi = document.getElementById('publi');
+            let money = document.getElementById('money');
+
+            let chk = document.createElement('input');
+            chk.setAttribute('type','checkboX');
+ 
+
+            let btn = document.createElement('button');
+            btn.setAttribute('onclick', 'removeInfo()');
+            btn.setAttribute('type', 'button');
+            btn.textContent = "삭제";
+
+            let p = document.createElement('p');
+            p.innerHTML = "&emsp;" +code.value + "&nbsp;" + bookName.value + "&emsp;" + author.value + "&ensp;" + publi.value+ "&nbsp;" + money.value+ "&nbsp;";
+            p.append(btn);
+            p.prepend(chk);
+
+            let div = document.getElementById('List');
+            div.appendChild(p);
+            
+        }
+
+        function removeInfo(){
+            event.target.parentNode.remove();
+        }
+
+        function deletList(){
+            let chb = document.querySelectorAll('input[type=checkbox]:checked');
+            for(let i of chb){
+                i.parentNode.remove();
+            }
+        }
+    </script>
+    
+</body>
+</html>

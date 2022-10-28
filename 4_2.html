@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+</head>
+<body>
+    <label>아이디 : <input type="text" id="id"></label>
+    <button type="button" id="btn" onclick="comfirmInofo() ">확인</button>
+    <br>
+    <label>비밀번호 : <input type="password" id="pw"></label>
+    <button type="button" id="pwBtn" onclick="pwInfo()">확인</button>
+    <br>
+    <label>주소 : <input type="text" id="addr"></label>
+    <button type="button" id="addrBtn" onclick="addrInfo()">확인</button>
+    <br>
+    <label>연락처 : <input type="text" id="phone"></label>
+    <button type="button" id="telBtn" onclick="telInfo()">확인</button>
+    <br>
+    <button type="button" id="saveBtn" onclick="saveInfo()">저장</button>
+    <div id="saveBox" style="border: 1px solid grey;">
+
+    </div>
+
+
+    <script>
+        function comfirmInofo(){
+            //input 아이디 요소 가져오기
+            let id = document.getElementById('id');
+            //아이디 길이 체크
+            let str = id.value;
+            //아이디 존재 유무 확인
+            if(str == ''){ //= (str.length == 0)
+                alert("아이디가 입력되지 않았습니다.");
+            }else{
+                //아이디를 10글자 미만 이하로만 설정
+                if(str.length <= 10){
+                    alert("사용할 수 있는 아이디 입니다.");
+                }else{
+                    alert("사용할 수 없는 아이디 입니다.");
+                    //input요소의 value에 데이터를 지워주는것.
+                    id.value = ''; 
+
+                }
+            }
+        }
+
+        function pwInfo(){
+            let pw = document.getElementById('pw');
+            let pwStr = pw.value;
+            if(pwStr == ''){
+                alert("비밀번호를 입력하세요.");
+            }else{
+                //indexOf 는 내가 몇번째 있는지 확인해줌
+                if(pwStr.indexOf('!') >= 0){ // 0보다 크면 느낌표가 있다는 뜻
+                    alert("!가 존재합니다. 다시 설정하세요.");
+                    pw.value ='';
+                }else{
+                    alert("사용할 수 있는 비밀번호입니다.");
+                }
+            }
+
+        }
+
+        function telInfo(){
+            let tel = document.getElementById('phone');
+            let telStr = tel.value;
+            if(telStr == ''){
+                alert("연락처를 입력하세요.");
+            }else{
+                // - 이 제대로 들어와 있는지를 확인
+                // 010 -1111 -1111 / substring을 활용한 '-' 체크
+                if(telStr.substring(3,4) == '-' && telStr.substring(8,9) == '-'){
+                    alert("정상적인 연락처 확인 하였습니다.")
+                }else{
+                    alert("010-1111-1111과 같은 형태로 입력하세요.");
+                    tel.value = '';
+                }
+            }
+        }
+
+        //주소 - 주소는 대구광역시로만 시작하도록
+        //input 대구광역시로 시작하는지  안하는지 확인
+        // 1) indexOf('대구광역시') == 0;
+        // 2) substring(///) == 대구광역시
+        // 3) 정상적인 주소 = 정상적인 주소를 입력하였습니다. 
+        //    아니면 = 비정상적인 주소를 입력하였습니다. 데이터 삭제
+        function addrInfo(){
+            let addr = document.getElementById('addr');
+            let addrStr = addr.value;
+            if(addrStr == ''){
+                alert("주소를 입력하세요.");
+            }else{
+                if(addrStr.substring(0,5) == '대구광역시'){
+                    alert("정상적인 주소를 입력하였습니다.");
+                }else{
+                    alert("비정상적인 주소를 입력하였습니다.")
+                    addr.value = '';
+                }
+            }
+        }
+
+        // 여태친 내용들 다 추가
+        function saveInfo(){
+            //1) 각각의 input요소 있는 value 가져와야함
+            let id = document.getElementById('id');
+            let pw = document.getElementById('pw');
+            let addr = document.getElementById('addr');
+            let tel = document.getElementById('phone');
+
+            //2) 가져온 value를 span 요소 생성하여 넣기
+            let span = document.createElement('span');
+            let btn = document.createElement('button');
+            //////4) 저장한 span 요소를 삭제하는 이벤트
+            ////1. setAttribute로 이벤트 추가
+            ////<button type="button" onclick ="removebtn()">삭제</button>
+            btn.setAttribute('onclick', 'removebtn()');
+            btn.setAttribute('type', 'button');
+            btn.textContent = '삭제'
+
+            console.log(btn);
+
+
+            // span.textContent = id.value + "<br>" + pw.value + "<br>" + addr.value + "<br>" + tel.value;
+            // - > 그냥 문자열로 저장 (태그가 아닌 일반적인 데이터로 인식)
+            // innerHTML로 span태그에 들어갈 데이터 넣어줌 
+            span.innerHTML = id.value + "<br>" + pw.value + "<br>" 
+            + addr.value + "<br>" + tel.value;
+            span.appendChild(btn);
+            // - > 태그도 함께 저장
+           
+            //3) span을 div append 시켜서 목록 view 해주는 함수
+            let div = document.getElementById('saveBox'); // div요소 호출
+            div.appendChild(span);   
+        }
+        
+        //하나하나 지우기 보단 스팬태그를 지움. 부모(span)위치 찾아야함 - 부모삭제하면 아래 태그 다 지워짐
+        function removebtn(){
+            //event.target - 내 자신 (삭제버튼)
+            //<span> 아이디, 비번, 주소, 전화, 삭제버튼 </span>
+            //삭제 버튼 -> 온클릭 속성 부여  -> 함수 이름 : removeBtn()
+            console.log(event.target);
+            console.log(event.target.parentNode.remove()); //자신의 부모 찾아서 지움
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터 자료 변환</title>
+</head>
+<body>
+    <script>
+        // console.log(number2);
+
+        // let number = 1; //number = 1 
+        // console.log(number);
+
+        // number = 2; //number = 2 
+        // number = 3; //number = 3(덮어써서 재사용 가능)
+
+        // var number2 = 2;
+        // console.log(number2);
+
+        // const number3 = 10;
+        // number3 = 100;
+
+        //원시형 데이터 타임 p28
+
+        // //1. 숫자형
+        // let num = 1;
+        // let num2 = 2;
+        // console.log(typeof num); // 맞는지 확인 내가 쓴 데이터가 어떤 타입인지 확인
+        // //2. 문자형
+        // let str = 'javascript';
+        // let str2 = "javascript";
+        // console.log(typeof str);
+        // //3.불리언(bool)
+        // let bool = true;
+        // bool = false;
+        // console.log(typeof bool);
+        // //5.  null
+        // let variable = null; //0이 아니라 비어있는 값 / null로 임의로 넣을수 도 있음(비어있지만 null- 쓰지않는 데이터 -로 들어가 있다)
+        // console.log(variable);
+        // //6. undefined
+        // console.log(data); //만든적 없는 데이터 쓰면 undefined 나옴
+        // //7.NaN - 문자를 숫자로 바꿀때 숫자외 다른 문자가 있을때 
+
+
+        //참조형 데이터 타입
+
+
+        //자료형 변환
+        //문자 -> 숫자로 변환
+        let str3 = "12345";
+        // let str3 = "12345aaa";
+        let str4 = "123.123";
+        console.log(typeof str3);
+
+        // 1. Number() - 소수점 아래에 있는 데이터 까지 변환, 숫자에 문자가 포함되어 있으면 숫자가 안됨
+        let num3 = Number(str3);
+        console.log(typeof num3);
+        console.log(num3);
+
+        let num5 = Number(str4);
+        console.log(num5);
+
+        //2. parseInt() - 소수점을 제외하고 정수만 데이터 변환, 숫자에 문자가 포함되면 문자 제외 숫자 보여줄 수 있음
+        let num4 = parseInt(str3);
+        console.log(num4);
+
+        let num6 = parseInt(str4);
+        console.log(num6);
+
+        //(참고- 소수점 문자 실수형으로 바꿀때) let num6 = parseInt(str4); + console.log(num6);
+        console.log(parseFloat(str4)); 
+
+        //숫자 -> 문자로
+        //1. toString()
+        // num4 = null;
+        let str5 = num4.toString();
+        console.log(typeof str5)
+        console.log(str5)
+
+        //2. String() - null 처리가능
+        num4 = null
+        let str6 = String(num4);
+        console.log(typeof str6);
+        console.log(str6);
+
+        //문자 - 한단어 'A'
+        //문자열 - 여러단어 합 'ASEFD'
+
+
+    </script>
+</body>
+</html>

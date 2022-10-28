@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if 연습</title>
+</head>
+<body>
+    <script>
+        // let walkAmount = prompt("하루에 걷는 양은 몇 보?");
+
+        // if(walkAmount > 10000){
+        //     document.write("아주 훌륭합니다.<br>");
+        // }
+
+        // let userName = prompt("방문자의 이름은?"); //false값이 아니므로 비교안해도 참
+        
+        // if(userName != "smith"){
+        //     document.write(userName + "님 반갑습니다.");
+        // }
+        
+        // let result = confirm("정말로 탈퇴하시겠습니까?");
+        // if(result){
+        //     alert("탈퇴 완료");
+        // }else{
+        //     alert("탈퇴 처리 취소")
+        // }
+        //===================================================================================
+        let id = "yedam"
+        let pw = "1234"
+
+        let userId = prompt("아이디는?");
+        let userPw = prompt("비밀번호는?");
+
+        if(id == userId){
+            if(pw == userPw){
+                document.write(userId + "님 반갑습니다.");
+            }else{
+                alert(userId + "님 비밀번호가 틀렸습니다.");
+                location.reload(); //페이지 재시작
+            }
+        }else{
+            alert("아이디가 틀렸습니다.");
+            location.reload(); //페이지 재시작
+        }
+        //===================================================================================
+        
+    </script>
+</body>
+</html>

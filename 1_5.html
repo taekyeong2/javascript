@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스위치</title>
+</head>
+<body>
+    <script>
+        //switch~case문
+        // switch(표현식){
+        //     case 조건1:
+        //         실행문
+        //         break;
+        //     case 조건2:
+        //         실행문
+        //         break;
+        //         ...
+        //         default:
+        //         실행문
+        //         break;
+        // }
+
+        // const input = Number(prompt("숫자를 입력하세요")); //Number() 문자를 숫자 타입으로 사용하기 위함
+        // //제어문(조건문)
+        // switch(input % 2){
+        //     case 0:
+        //         alert("짝수입니다.");
+        //         break;
+        //     case 1:
+        //         alert("홀수입니다.");
+        //         break;
+        //     default:
+        //         alert("숫자가 아닙니다.");
+        //         break;
+        //     }
+
+        //=========================================================================================
+        
+        // 12로 나누는 나머지에 따라서 띠를 결정
+        // 0 -> 원숭이 1-> 닭 2->개 3->돼재 4->쥐 5->소 6->범 7->토끼 8->용 9->뱀 10->말 11->양
+        // const zodiacInput = Number(prompt("태어난 해를 입력하세요."));
+        // switch(zodiacInput % 12){
+        //     case 0:
+        //         alert("원숭이띠입니다");
+        //         break;
+        //     case 1:
+        //         alert("닭띠입니다");
+        //         break;
+        //     case 2:
+        //         alert("개띠입니다");
+        //         break;
+        //     case 3:
+        //         alert("돼지띠입니다");
+        //         break;
+        //     case 4:
+        //         alert("쥐띠입니다");
+        //         break;
+        //     case 5:
+        //         alert("소띠입니다");
+        //         break;
+        //     case 6:
+        //         alert("범입니다");
+        //         break;
+        //     case 7:
+        //         alert("토끼띠입니다");
+        //         break;
+        //     case 8:
+        //         alert("용띠입니다");
+        //         break;
+        //     case 9:
+        //         alert("뱀띠입니다");
+        //         break;
+        //     case 10:
+        //         alert("말띠입니다");
+        //         break;
+        //     case 11:
+        //         alert("양띠입니다");
+        //         break;
+        //     default:
+        //         alert("띠가 없습니다");
+        //         break;
+        // }
+        
+        // const zodiacInput = Number(prompt("태어난 해를 입력하세요."));
+        // let result = '';
+        // switch(zodiacInput % 12){
+        //     case 0:
+        //         result = "원숭이띠입니다";
+        //         break;
+        //     case 1:
+        //         result = "닭띠입니다";
+        //         break;
+        //     case 2:
+        //         result = "개띠입니다";
+        //         break;
+        //     case 3:
+        //         result = "돼지띠입니다";
+        //         break;
+        //     case 4:
+        //         result = "쥐띠입니다";
+        //         break;
+        //     case 5:
+        //         result = "소띠입니다";
+        //         break;
+        //     case 6:
+        //         result = "범입니다";
+        //         break;
+        //     case 7:
+        //         result = "토끼띠입니다";
+        //         break;
+        //     case 8:
+        //         esult = "용띠입니다";
+        //         break;
+        //     case 9:
+        //         result = "뱀띠입니다";
+        //         break;
+        //     case 10:
+        //         result = "말띠입니다";
+        //         break;
+        //     case 11:
+        //         result = "양띠입니다";
+        //         break;
+        // }
+
+        //     if(result.length == 0){ //글자수의 길이
+        //         console.log("해당되는 띠가 없습니다.");
+        //     }else{
+        //         console.log(result + "띠 입니다.");
+        //     }
+
+        //====================================================================
+        //성적을 출력하는 예제
+        //점수를 입력 -> A,B,C,D
+        // //A90이상 B80이상 C70이상 D60이상 
+        // // 90/10=9 (99/10=9) ,8(89/10=8) ,7(75/10=7) ,6
+        
+        const input = Number(prompt("성적을 입력하세요"));
+        switch(parseInt(input / 10)){ //소수점부분에서 정수 부분만 나오게 하기 위해 사용 parsInt
+            case 10:
+            case 9: //브레이크가 없어서 이어서 같이 실행함
+                alert("A학점 입니다.");
+                break;
+            case 8:
+                alert("B학점 입니다.");
+                break;
+            case 7:
+                alert("C학점 입니다.");
+                break;
+            case 6:
+                alert("D학점 입니다.");
+                break;
+            default:
+                alert("낙제입니다.");
+                break;
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- input태그에 데이터 존재 유무 확인하고 action 페이지로 넘어가는 이벤트 -->
+    <form id="form" action="practice.html" onsubmit="return fnSubmit()">
+        <label>이름 <input type="text" name="userid" id="userid"></label><br>
+        <button>submit</button>
+    </form>
+
+    
+    <!-- comfirm을 활용해서 페이지 이동 물어보고 진행하는 이벤트 -->
+    <a href="http://www.naver.com" id="abtn">naver</a>
+    
+    <button type="button" id="btn">button</button>
+
+        <script>
+            let btn = document.getElementById('btn');
+            btn.addEventListener('click', fncBtn);
+
+            let aTag = document.getElementById("abtn");
+            aTag.addEventListener('click', fncA);
+
+            let forms = document.getElementById('form');
+            forms.addEventListener('submit', fncForm);
+
+            function fncForm(){
+                let txt = document.getElementById('userid');
+                if(txt.value == ''){
+                    event.preventDefault(); 
+                    //return false;
+                }
+            }
+
+
+            function fncA(){
+                if(!confirm()){
+                    event.preventDefault();   
+                }
+            }
+
+            function fncBtn(){
+                let form = document.getElementById('form');
+                form.submit();
+            }
+
+            
+        </script>
+</body>
+</html>

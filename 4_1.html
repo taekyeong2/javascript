@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eventinput</title>
+</head>
+<body>
+    <input type="input" value="예담" id="id">
+    <input type="input" id="id2">
+    <br>
+    <button type="button" id="btn" onclick="getInfo()">정보 추출</button>
+    <button type="button" id="btn2" onclick="getInfo2()">정보 추출2</button>
+    
+
+    <p></p>
+
+    <script>
+        function getInfo(){ 
+            //첫번째 input 요소 가져옴.
+            let inputId = document.getElementById('id');
+            //input태그 안에 있는 데이터(value)가져옴
+            let str = inputId.value;
+
+            //p요소 가져옴.
+            let p = document.querySelector('p'); //아이디나 인풋태그 없어서 쿼리 씀 (선택자 사용함)
+            //첫번째 input 요소의 데이터를 p요소에 저장.
+            p.textContent = str;
+            // console.log("정보 추출 버튼 눌러짐");
+            //innerHTML - 안에 있는 글자 , 태그 다 불러옴
+            //textContent - 글자만
+        }
+
+        function getInfo2(){
+            let inputId = document.getElementById('id2');
+            let str = inputId.value;
+            let p = document.querySelector('p');
+            p.textContent = str;
+        }
+
+    </script>
+
+</body>
+</html>

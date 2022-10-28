@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Event-->
+    <input id="txtName">
+    <button type="button">버튼</button>
+    <script>
+        //button element 가져옴.
+        let btn = document.querySelector('button');
+
+        //button add event
+        // 마우스 click 행동 할 때
+        btn.addEventListener('click', Fncbtn);  
+        btn.addEventListener('click', Fncbtn2);
+        //button make function
+        function Fncbtn(){
+            alert("버튼을 클릭했습니다.");
+        }
+
+        function Fncbtn2(){
+            console.log("버튼 클릭")
+        }
+
+        //마우스 커서를 올렸다가 나갔다가
+        let txtName = document.getElementById("txtName");
+        // input 태그에 마우스를 올렸을때(hover)
+        txtName.addEventListener('mouseover', fncTxt);
+
+        // input 태그에 마우스가 떠날때
+        txtName.addEventListener('mouseout', fncTxt2);
+
+        // input 태그 style 변경
+        function fncTxt(){
+            //txtName.setAttribute();
+            txtName.style.background = "yellow";
+        }
+
+        // input 태그 style 변경
+        function fncTxt2(){
+            txtName.style.background = 'white';
+        }
+
+        txtName.addEventListener("change", fncChange);
+
+        function fncChange(){
+            console.log("변경됨");
+        }
+    </script>
+</body>
+</html>

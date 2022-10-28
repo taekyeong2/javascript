@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>print</title>
+</head>
+<body>   
+     <script>
+        //순서가 중요하다. 순서대로 출력 적용됨
+        let sign = prompt("당신의 별자리는 무엇입니까?");
+        // 물음 창으로 출력/prompt 출력 => sign(변수 :숫자 문자 등 어떤 데이터를 넣는지에 따라 달라진다 /빈껍데기)
+        // ㅣet/var/const(변수에 성질 줌) - 데이터 담는 변수 (순서대로 써야함, 만들고 써야하니까 변수 사용 범위 좁음 )/ 데이터 담는 변수 (변수 선언 전 가져와서 쓸수 있긴 함 - 호이스팅p22) /
+        //                                 / 상수 - 한번 데이터 선언하면 못바꿈
+        if(sign.toLowerCase() === "전갈자리"){
+            alert("저도 전갈자리입니다!");
+        }
+        //정답치면 답나옴 let-if ?
+        sign = window.prompt();
+        sign = prompt();
+        //윈도우 프롬트나 걍 프롬트 같다. 
+        console.log(sign);
+        //위에 출력창에 글 쓰면 콘솔에 저장됨 /console 안에 저장
+        sign = window.prompt("오늘은 너무 춥습니까?", "네 ");
+        //콤마 앞글은 질문창에 뒷글은 정답창에 나옴
+        document.write("<input type=input value='123'>");
+        //input창만드는 거랑 똑같음 화면안에 출력됨 /document 화면에 출력
+        let str = "<input type=input value='123'><br>";
+        str += "<h1>테스트</h1>";
+        document.write(str);
+    </script>
+</body>
+</html>

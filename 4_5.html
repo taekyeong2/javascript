@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>select</title>
+</head>
+<body>
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded',function(){  
+            //돔트리가 다 완성된 다음 이 안에 있는 것을 실행하라는 뜻.
+            //브라우저의 모든게 다 등록되고 나서 실행되는 함수 (걍외움)
+            //따라서 위에서 스크립트 해도 상관없음. 안쓰고 밑에있는 태그 가져오면 오류남.
+            //---------------------------------------------------------------------------------
+            let select = document.querySelector('select');
+            let p = document.querySelector('p');
+
+            //함수를 여기 넣으면 못찾음
+        })
+    </script> -->
+    <select onclick="check()">
+        <option>자바</option>
+        <option>HTML</option>
+        <option>CSS</option>
+        <option>JavaScript</option>
+        <option>Python</option>
+        <option>OracleDataBase</option>
+    </select>
+    <p></p>
+    <script>
+        function check(){ // 그래서 여기 따로 만든다.
+            //event.currentTarget - select (데이터를 의미가 아니가 창 자체)
+            //click - option
+            let options = event.currentTarget.options;
+            //-> select가 가지고 있는 옵션을 가져온다.\
+            //셀렉트 밑에 있는 옵션이 어떤값을 가지고 있는지 전부 가져옴
+            //  currentTarget -> 온클릭이벤트한 주체한 값
+            console.log(options);
+
+            //내가 선택한 데이터 위치값(index) 가져옴
+            let index = event.currentTarget.options.selectedIndex;
+            console.log(index);
+
+            let p = document.querySelector('p');
+            p.textContent = "선택 :" + options[index].textContent;
+            //                         해당방에 있는 데이터의 값을 가지고 나옴.
+            //                         ex) array[1]
+            console.log(options[index]);
+
+        }
+    </script>
+</body>
+</html>
